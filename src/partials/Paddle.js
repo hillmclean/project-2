@@ -20,14 +20,16 @@ export default class Paddle {
           break;
       }
     });
+
+
   }
 
   moveUp() {
-    this.y = this.y - this.speed;
+    this.y = Math.max(0, this.y - this.speed);
   }
 
   moveDown() {
-    this.y = this.y + this.speed;
+    this.y = Math.min((this.boardHeight - this.height), this.y + this.speed);
   }
 
   //...
@@ -40,5 +42,4 @@ export default class Paddle {
     paddleRect.setAttributeNS(null, "fill", "white");
     svg.appendChild(paddleRect);
   }
-
 }
