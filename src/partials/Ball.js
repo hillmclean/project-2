@@ -23,13 +23,19 @@ export default class Ball {
     this.vx = (6 - Math.abs(this.vy)) * this.direction;
   }
 
-  wallCollision() {
+  wallCollision(paddle1, paddle2) {
     // did the ball hit the top or the bottom walls?
     if ((this.y + this.radius >= this.boardHeight) || (this.y - this.radius <= 0)) {
       this.vy = this.vy * -1;
     }
 
-    if ((this.x - this.radius >= this.boardWidth) || (this.x + this.radius <= 0)) {
+    if (this.x - this.radius >= this.boardWidth) {
+      paddle1.increaseScore();
+      this.direction = -1;
+      this.reset();
+    } else if (this.x + this.radius <= 0) {
+      paddle2.increaseScore();
+      this.direction = 1;
       this.reset();
     }
 
@@ -68,7 +74,7 @@ export default class Ball {
     pongBall.setAttributeNS(null, "fill", "white");
     svg.appendChild(pongBall);
     this.ballMove();
-    this.wallCollision();
+    this.wallCollision(paddle1, paddle2);
     this.paddleCollision(paddle1, paddle2);
   }
 }

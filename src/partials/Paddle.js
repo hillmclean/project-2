@@ -20,7 +20,14 @@ export default class Paddle {
           break;
       }
     });
+  }
 
+  getScore() {
+    return this.score;
+  }
+
+  increaseScore() {
+    this.score = this.score + 1;
   }
 
   getPaddlePosition() {
