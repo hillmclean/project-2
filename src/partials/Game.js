@@ -2,6 +2,7 @@ import { SVG_NS, PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_GAP, BALL_RADIUS } from '..
 import Board from './Board';
 import Paddle from './Paddle';
 import Ball from './Ball';
+import Score from './Score';
 
 export default class Game {
   constructor(element, width, height) {
@@ -16,6 +17,8 @@ export default class Game {
     this.paddle1 = new Paddle(this.height, PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_GAP, paddle_mid, 'w', 's');
     this.paddle2 = new Paddle(this.height, PADDLE_WIDTH, PADDLE_HEIGHT, right_gap, paddle_mid, 'ArrowUp', 'ArrowDown');
     this.pongBall = new Ball(BALL_RADIUS, this.width, this.height);
+    this.score1 = new Score(this.width / 2 - 50, 30, 30, 30);
+    this.score2 = new Score(this.width / 2 + 25, 30, 30, 30);
     // Other code goes here...
   }
 
@@ -32,5 +35,8 @@ export default class Game {
     this.paddle1.render(svg);
     this.paddle2.render(svg);
     this.pongBall.render(svg, this.paddle1, this.paddle2);
+    this.score1.render(svg, this.paddle1.getScore());
+    this.score2.render(svg, this.paddle2.getScore());
+
   }
 }
