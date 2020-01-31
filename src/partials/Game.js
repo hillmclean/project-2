@@ -8,11 +8,14 @@ export default class Game {
     this.element = element;
     this.width = width;
     this.height = height;
+    this.paddleWidth = 8;
+    this.paddleHeight = 56;
+    this.boardGap = 10;
     this.gameElement = document.getElementById(this.element);
     this.board = new Board(this.width, this.height);
-    this.paddle1 = new Paddle(this.height, 8, 56, 10, 100);
-    this.paddle2 = new Paddle(this.height, 8, 56, 494, 100);
-    this.pongBall = new Ball(8, 256, 128);
+    this.paddle1 = new Paddle(this.height, this.paddleWidth, this.paddleHeight, this.boardGap, ((this.height - this.paddleHeight) / 2));
+    this.paddle2 = new Paddle(this.height, this.paddleWidth, this.paddleHeight, (this.width - (this.paddleWidth + this.boardGap)), ((this.height - this.paddleHeight) / 2));
+    this.pongBall = new Ball(8, this.width, this.height);
     // Other code goes here...
   }
 
