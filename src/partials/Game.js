@@ -31,6 +31,6 @@ export default class Game {
     this.board.render(svg);
     this.paddle1.render(svg);
     this.paddle2.render(svg);
-    this.pongBall.render(svg);
+    this.pongBall.render(svg, this.paddle1, this.paddle2);
   }
 }
