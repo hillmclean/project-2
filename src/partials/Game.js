@@ -3,7 +3,6 @@ import Board from './Board';
 import Paddle from './Paddle';
 import Ball from './Ball';
 import Score from './Score';
-// import Winner from './Winner';
 
 export default class Game {
   constructor(element, width, height) {
@@ -48,19 +47,17 @@ export default class Game {
       this.gameElement.appendChild(svg);
 
       if (this.paddle1.getScore() === 5) {
-        console.log("Player 1 Wins!");
         this.paddle1.height = PADDLE_HEIGHT / 2;
       } else if (this.paddle2.getScore() === 5) {
-        console.log("Player 2 Wins!");
         this.paddle2.height = PADDLE_HEIGHT / 2;
       }
 
       if (this.paddle1.getScore() === 10) {
-        console.log("Player 1 Wins!");
-        this.gameElement.innerHTML = "Player 1 Wins!"
+        this.gameElement.innerHTML = "Player 1 Wins!";
+        this.gameElement.style.color = "#FF5863";
       } else if (this.paddle2.getScore() === 10) {
-        console.log("Player 2 Wins!");
-        this.gameElement.innerHTML = "Player 2 Wins!"
+        this.gameElement.innerHTML = "Player 2 Wins!";
+        this.gameElement.style.color = "#7057FF";
       }
 
       if (this.paddle1.getScore() === 10 || this.paddle2.getScore() === 10) {

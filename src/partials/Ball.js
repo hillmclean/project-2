@@ -81,4 +81,5 @@ export default class Ball {
     this.wallCollision(paddle1, paddle2);
     this.paddleCollision(paddle1, paddle2);
   }
+
 }
