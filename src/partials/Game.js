@@ -4,7 +4,6 @@ import Paddle from './Paddle';
 import Ball from './Ball';
 import Score from './Score';
 import Winner from './Winner';
-// import Winner from './Winner';
 
 export default class Game {
   constructor(element, width, height) {
@@ -22,7 +21,7 @@ export default class Game {
     this.pongBall = new Ball(BALL_RADIUS, this.width, this.height);
     this.score1 = new Score(this.width / 2 - 50, 30, 30, 30);
     this.score2 = new Score(this.width / 2 + 25, 30, 30, 30);
-    // this.winner = new Winner(this.width / 2, this.height / 2); // need to render
+    this.winner = new Winner(this.width / 2, this.height / 2); // need to render
     // Other code goes here...
     document.addEventListener("keydown", event => {
       if (event.key === " ") {
@@ -58,13 +57,16 @@ export default class Game {
       svg.setAttributeNS(null, "viewBox", `0 0 ${this.width} ${this.height}`);
       this.gameElement.appendChild(svg);
 
-      if (this.paddle1.getScore() === 5) {
+
+      if (this.paddle1.getScore() === 10) {
         console.log("Player 1 Wins!");
-      } else if (this.paddle2.getScore() === 5) {
+        this.gameElement.innerHTML = "Player 1 Wins!"
+      } else if (this.paddle2.getScore() === 10) {
         console.log("Player 2 Wins!");
+        this.gameElement.innerHTML = "Player 2 Wins!"
       }
 
-      if (this.paddle1.getScore() === 5 || this.paddle2.getScore() === 5) {
+      if (this.paddle1.getScore() === 10 || this.paddle2.getScore() === 10) {
         this.paused = !this.paused;
         if (this.paused === true) {
           this.paddle1.setSpeed(0);
