@@ -24,6 +24,7 @@ export default class Ball {
     this.vx = (6 - Math.abs(this.vy)) * this.direction;
   }
 
+
   wallCollision(paddle1, paddle2) {
     // did the ball hit the top or the bottom walls?
     if ((this.y + this.radius >= this.boardHeight) || (this.y - this.radius <= 0)) {
