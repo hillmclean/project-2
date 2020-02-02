@@ -77,13 +77,10 @@ body {
   height: 100vh;
   justify-content: center;
   width: 100%;
-  background: "#FF595F";
 }
 
 h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem; 
   text-align: center;
-  color: "#FF595F";
-
 }
