@@ -75,7 +75,7 @@ export default class Ball {
     pongBall.setAttributeNS(null, "cx", this.x);
     pongBall.setAttributeNS(null, "cy", this.y);
     pongBall.setAttributeNS(null, "r", this.radius);
-    pongBall.setAttributeNS(null, "fill", "white");
+    pongBall.setAttributeNS(null, "fill", "#C0FF8B");
     svg.appendChild(pongBall);
     this.ballMove();
     this.wallCollision(paddle1, paddle2);

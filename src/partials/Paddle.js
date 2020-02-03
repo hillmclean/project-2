@@ -60,7 +60,7 @@ export default class Paddle {
     paddleRect.setAttributeNS(null, "y", this.y);
     paddleRect.setAttributeNS(null, "height", this.height);
     paddleRect.setAttributeNS(null, "width", this.width);
-    paddleRect.setAttributeNS(null, "fill", "white");
+    paddleRect.setAttributeNS(null, "fill", "#EB9382");
     svg.appendChild(paddleRect);
   }
 }
