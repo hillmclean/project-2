@@ -1,6 +1,33 @@
-# Pong Game Starter
+# Pong Game by Hillary
 
-A starter project for a basic pong game using SVGs.
+This project is mainly JavaScript and was created mostly in an in-class code-along with some tweeks added after such as color edits, announcing the winner, and shortening the paddles once a player hits 5 points. 
+
+## Technolgy Used 
+
+In this repo, you will find the following files:
+
+- HTML
+- CSS 
+- JavaScript
+- JSON
+- ICO
+- Node Modules
+
+## Personal Learnings
+
+In the making of this project, I have started to learn the following:
+
+- Objects
+- Functions
+- Arrays
+- Loops
+- Conditions
+- Nodes
+- Classes
+- Modules
+
+What I found the most challenging during this project was figuring out what goes where and trying to understand how everything connects to one another and in which files. This is definitely still something I need to get better at (among many other things as well...).
+
 
 ## Setup
 
