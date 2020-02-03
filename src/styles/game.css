@@ -47,10 +47,6 @@ table {
 	border-spacing: 0;
 }
 
-/**
- * FONTS
- */
-
 @font-face {
   font-family: 'Silkscreen Web';
   src: url('../../public/fonts/slkscr-webfont.eot');
@@ -61,10 +57,6 @@ table {
   font-weight: normal;
   font-style: normal;
 }
-
-/**
- * GAME
- */
 
 html {
   font-size: 16px;
