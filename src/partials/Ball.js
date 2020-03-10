@@ -70,6 +70,7 @@ export default class Ball {
     this.y = this.y + this.vy;
   }
 
+
   render(svg, paddle1, paddle2) {
     let pongBall = document.createElementNS(SVG_NS, "circle");
     pongBall.setAttributeNS(null, "cx", this.x);
@@ -80,6 +81,16 @@ export default class Ball {
     this.ballMove();
     this.wallCollision(paddle1, paddle2);
     this.paddleCollision(paddle1, paddle2);
+
+    // let pongBall2 = document.createElementNS(SVG_NS, "circle");
+    // pongBall2.setAttributeNS(null, "cx", this.x);
+    // pongBall2.setAttributeNS(null, "cy", this.y);
+    // pongBall2.setAttributeNS(null, "r", this.radius);
+    // pongBall2.setAttributeNS(null, "fill", "#C0FF8B");
+    // svg.appendChild(pongBall2);
+    // this.ballMove();
+    // this.wallCollision(paddle1, paddle2);
+    // this.paddleCollision(paddle1, paddle2);
   }
 
 }
