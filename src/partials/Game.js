@@ -18,7 +18,7 @@ export default class Game {
     this.paddle1 = new Paddle(this.height, PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_GAP, paddle_mid, KEYS.p1up, KEYS.p1down);
     this.paddle2 = new Paddle(this.height, PADDLE_WIDTH, PADDLE_HEIGHT, right_gap, paddle_mid, KEYS.p2up, KEYS.p2down);
     this.pongBall = new Ball(BALL_RADIUS, this.width, this.height);
-    this.pongball2 = new Ball(4, this.width, this.height);
+    this.pongball2 = new Ball(10, this.width, this.height);
     this.score1 = new Score(this.width / 2 - 50, 30, 30, 30);
     this.score2 = new Score(this.width / 2 + 25, 30, 30, 30);
     // Other code goes here...
@@ -75,6 +75,11 @@ export default class Game {
       this.paddle1.render(svg);
       this.paddle2.render(svg);
       this.pongBall.render(svg, this.paddle1, this.paddle2);
+
+      if (this.paddle1.getScore() > 2 || this.paddle2.getScore() > 2) {
+        this.pongball2.render(svg, this.paddle1, this.paddle2);
+      }
+
       this.score1.render(svg, this.paddle1.getScore());
       this.score2.render(svg, this.paddle2.getScore());
 
